@@ -4,11 +4,9 @@ include_once 'libs/Smarty.class.php';
 
 include_once 'route.php';
 
-function home () {
-  echo 'hola';
-}
 
-function hola () {
+
+function home () {
   $smarty = new Smarty();
   $smarty->assign('titulo',"RISOTERIA ITALIANA");
   $smarty->display('templates/home.tpl');
