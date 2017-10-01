@@ -1,4 +1,6 @@
 <?php
+
+
 define('ACTION', 0);
 define('VALOR1', 1);
 include_once 'config/ConfigApp.php';
@@ -26,4 +28,5 @@ if (array_key_exists($actionName,ConfigApp::$ACTIONS)){
 } else {
     home();
 }
- ?>
+
+?>
