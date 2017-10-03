@@ -46,9 +46,9 @@
               <ul class="nav navbar-nav">
 
                 <li class="active"> <a href="#" id= "nav_inicio"> Inicio </a> </li>
-                <li class="active"> <a href="menu" id= "nav_inicio"> Menu </a> </li>
-                <li class="active"> <a href="contacto" id= "nav_inicio"> Contacto </a> </li>
-                <li class="active"> <a href="nosotros" id= "nav_inicio"> Nosotros </a> </li>
+                <li class="active"> <a href="menu" id= "nav_menu"> Menu </a> </li>
+                <li class="active"> <a href="contacto" id= "nav_contacto"> Contacto </a> </li>
+                <li class="active"> <a href="nosotros" id= "nav_nosotros"> Nosotros </a> </li>
 
               </ul>
             </div><!-- /.navbar-collapse -->

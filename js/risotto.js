@@ -1,65 +1,67 @@
 //--------------------- Render ------------------------------
 //-----------------------------------------------------------
-
-$("#nav_menu").on("click", function()
+/*
+$(document).ready(function()
 {
   $.ajax({
-    url:"http://localhost/proyectos/TPE%20WEB%20II/",
-    method:"GET",
-    dataType:"html",
-    success: mostrar_render,
-    error: handle_error
-    });
+    url:"http://localhost/proyectos/TPE%20WEB%20II/menu",
+//    method:"GET",
+//    dataType:"html",
+    success: function (data){
+      $("#render").html(data);
+    }
   });
+  });
+*/
 
-
-/* $(document).ready(function(){
-  cargarSeccion("http://localhost/proyectos/TPE%20WEB%20II/");
+// $(document).ready(function(){
+  //cargarSeccion("http://localhost/proyectos/TPE%20WEB%20II/");
 //  document.location.href ="#header";
-});
+//});
 
-  $ ("#nav_logo").on("click", function (evento) {
-	evento.preventDefault();
-  let  dir_nueva = $(this).attr("inicio.html")
-  cargarSeccion("inicio.html");
-});
+//  $ ("#nav_logo").on("click", function (evento) {
+//	evento.preventDefault();
+//  let  dir_nueva = $(this).attr("inicio.html")
+//  cargarSeccion("inicio.html");
+//});
 
 $("#nav_inicio").on("click", function() {
-  cargarSeccion("inicio.html")
+  cargarSeccion("http://localhost/proyectos/TPE%20WEB%20II/home")
   });
 
 $("#nav_menu").on("click", function() {
-  cargarSeccion("menu.html")
+  cargarSeccion("http://localhost/proyectos/TPE%20WEB%20II/menu")
+  alert ("hola!!");
   });
 
 $("#nav_contacto").on("click", function() {
-  cargarSeccion("contacto.html")
+  cargarSeccion("http://localhost/proyectos/TPE%20WEB%20II/contacto")
   });
 
 
 $("#nav_nosotros").on("click", function() {
-    cargarSeccion("nosotros.html")
+    cargarSeccion("http://localhost/proyectos/TPE%20WEB%20II/nosotros")
 });
 
-function handle_error ( ) {
-  $("#render").html("<h1>Error - Request Failed!</h1>");
-};*/
+//function handle_error ( ) {
+  //$("#render").html("<h1>Error - Request Failed!</h1>");
+//};*/
 
-function mostrar_render (data){
-  $("#render").html(data);
-};
+//function mostrar_render (data){
+  //$("#render").html(data);
+//};
 
 function cargarSeccion(seccion) {
     $.ajax({
       url: seccion,
-      method:"GET",
-      dataType:"html",
+//      method:"GET",
+//      dataType:"html",
       success: function(data) {
-        mostrar_render(data);
-       if (seccion = "menu.html")
-          iniciarEventosMenu()
+        $("#render").html(data);
+//       if (seccion = "menu.html")
+//          iniciarEventosMenu()
       },
-      error: handle_error
+//      error: handle_error
     });
 }
 
