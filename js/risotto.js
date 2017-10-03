@@ -1,8 +1,21 @@
 //--------------------- Render ------------------------------
 //-----------------------------------------------------------
-$(document).ready(function(){
-  cargarSeccion("inicio.html");
-  document.location.href ="#header";
+
+$("#nav_menu").on("click", function()
+{
+  $.ajax({
+    url:"http://localhost/proyectos/TPE%20WEB%20II/",
+    method:"GET",
+    dataType:"html",
+    success: mostrar_render,
+    error: handle_error
+    });
+  });
+
+
+/* $(document).ready(function(){
+  cargarSeccion("http://localhost/proyectos/TPE%20WEB%20II/");
+//  document.location.href ="#header";
 });
 
   $ ("#nav_logo").on("click", function (evento) {
@@ -30,7 +43,7 @@ $("#nav_nosotros").on("click", function() {
 
 function handle_error ( ) {
   $("#render").html("<h1>Error - Request Failed!</h1>");
-};
+};*/
 
 function mostrar_render (data){
   $("#render").html(data);
@@ -52,7 +65,7 @@ function cargarSeccion(seccion) {
 
 //--------------------- Render ------------------------------
 //--------------------- Rest ---------------------------------
-const GRUPOWEB = 51;
+/*const GRUPOWEB = 51;
 
 function cargar_base() {
     event.preventDefault();
@@ -315,4 +328,4 @@ function guardarInformacion() {
             }
         });
     }
-}
+}*/
