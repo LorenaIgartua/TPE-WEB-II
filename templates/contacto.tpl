@@ -1,4 +1,3 @@
-{include file="header.tpl"}
 
 <div class="cuerpo">
   <h1>Contacto</h1>
@@ -44,5 +43,3 @@
     </form>
 </div>
 </div>
-
-{include file="footer.tpl"}
