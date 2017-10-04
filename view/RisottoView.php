@@ -1,7 +1,7 @@
 <?php
 
 
-class TareasView extends View
+class RisottoView extends View
 {
   function mostrarIndex (){
     return  $this->smarty->display('templates/index.tpl');

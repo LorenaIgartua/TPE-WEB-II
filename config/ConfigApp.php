@@ -5,10 +5,10 @@ class ConfigApp
   public static $ACTION = "action";
   public static $PARAMS = "params";
   public static $ACTIONS = [
-      '' =>  'index',
-      'nosotros' =>  'nosotros',
-      'menu' =>  'menu',
-      'contacto' =>  'contacto',
+      '' =>  'RisottoController#index',
+      'nosotros' =>  'RisottoController#nosotros',
+      'menu' =>  'RisottoController#menu',
+      'contacto' =>  'RisottoController#contacto',
   ];
 }
 
