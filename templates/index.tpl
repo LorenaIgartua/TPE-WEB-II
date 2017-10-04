@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 
-<div class="contenedor">
+<div id="render">
 
 </div>
 

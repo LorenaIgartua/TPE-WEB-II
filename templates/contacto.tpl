@@ -2,7 +2,7 @@
 <div class="cuerpo">
   <h1>Contacto</h1>
 
-    <form class="form-horizontal">
+    <form class="form-horizontal" method = "post">
       <div class="form-group">
         <label for="inputName" class="col-sm-2 control-label">Nombre</label>
         <div class="col-sm-10">
@@ -37,7 +37,7 @@
       <textarea class="form-control" rows="6"></textarea>
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="formulario">ENVIAR</button>
+          <button class="formulario">ENVIAR</button>
         </div>
       </div>
     </form>

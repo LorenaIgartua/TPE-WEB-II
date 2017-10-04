@@ -45,7 +45,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
 
-                <li class="active"> <a href="#" id= "nav_inicio"> Inicio </a> </li>
+                <li class="active"> <a href="home" id= "nav_inicio"> Inicio </a> </li>
                 <li class="active"> <a href="menu" id= "nav_menu"> Menu </a> </li>
                 <li class="active"> <a href="contacto" id= "nav_contacto"> Contacto </a> </li>
                 <li class="active"> <a href="nosotros" id= "nav_nosotros"> Nosotros </a> </li>
