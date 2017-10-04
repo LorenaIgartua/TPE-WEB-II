@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+
 
 <div class="cuerpo">
     <div >
@@ -50,5 +50,3 @@
     </a>
   </div>
 </div>
-
-{include file="footer.tpl"}

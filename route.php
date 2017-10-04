@@ -3,6 +3,12 @@
   define('VALOR1', 1);
   include_once 'config/ConfigApp.php';
   include_once 'index.php';
+  include_once 'model/Model.php';
+  include_once 'view/View.php';
+  include_once 'controller/Controller.php';
+  include_once 'controller/RisottoController.php';
+
+
 
 function parseURL($url)
 {
@@ -19,10 +25,10 @@ function parseURL($url)
           $params = $urlData[ConfigApp::$PARAMS];
           $metodo = ConfigApp::$ACTIONS[$action];
           if(isset($params) &&  $params != null){
-              echo $metodo($params);
+              echo $controller->$metodo($params);
           }
           else{
-              echo $metodo();
+              echo $controller->$metodo();
           }
       }
   }

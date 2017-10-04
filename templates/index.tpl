@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 
-<div class="cuerpo">
-    
+<div class="contenedor">
+
 </div>
 
 {include file="footer.tpl"}

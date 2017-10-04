@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+
 
 <div class="cuerpo">
 
@@ -17,5 +17,3 @@
   <li class="valores"><span class="valor">Alegría.- </span> Todos los días tenemos motivos para sonreír, unos de nuestros principales objetivos es que la estancia del comensal y personal sea agradable, y que se vayan contentos.</li>
 </ul>
 </div>
-
-{include file="footer.tpl"}
