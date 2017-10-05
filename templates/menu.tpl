@@ -1,26 +1,29 @@
 
 
 <div class="cuerpo" id= "numero_de_grupo">
-  
+
   <div class="menu col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
     <h1>menú</h1>
 
-      <h3>ensaladas</h3>
-          <table class="menu" id = "tabla_ensaladas">
-          </table>
+    {foreach from=$tipo item=nombre_menu}
+        <h3>{$nombre_menu['tipo_nombre']}</h3>
+        <table class="menu" id = "{$nombre_menu['tipo_nombre']}" >
+          {foreach from=$menu item=plato}
+            {if ($plato['menu_id_menu']==$nombre_menu['tipo_id_menu'])}
+              <tr>
+                  <td id="plato" class = "celda_plato" >
+                    <h4>{$plato['plato_nombre']}</h4>
+              <br>
+                    {$plato['plato_descripcion']}
+              </td>
+              <td id="precio" class = "celda_precio" >{$plato['plato_valor']}</td>
+              </tr>
+            {/if}
+          {/foreach}
+        </table>
+  {/foreach}
 
-    <h3>risottos</h3>
-          <table class="menu" id = "tabla_risottos">
-          </table>
-
-    <h3>Otros Platos Principales</h3>
-          <table class="menu" id = "tabla_otros_platos">
-          </table>
-
-    <h3>postres</h3>
-          <table class="menu" id = "tabla_postres">
-          </table>
   </div>
   <div class="formulario_rest">
 

@@ -19,9 +19,12 @@ class RisottoView extends View
     return  $this->smarty->display('templates/nosotros.tpl');
   }
 
-  function mostrarMenu (){
+  function mostrarMenu ($tipo,$menu){
+    $this->smarty->assign('tipo', $tipo);
+    $this->smarty->assign('menu', $menu);
     return  $this->smarty->display('templates/menu.tpl');
   }
+
 }
 
  ?>

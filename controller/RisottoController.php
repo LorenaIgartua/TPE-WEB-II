@@ -6,6 +6,7 @@ include_once 'model/RisottoModel.php';
 
 
 
+
 class RisottoController extends Controller
 {
     function __construct ()  {
@@ -33,13 +34,23 @@ class RisottoController extends Controller
 
   public function menu()
   {
-    $this->view->mostrarMenu();
+    $menu = $this->model->obtenerMenu();
+    $tipo = $this->model->obtenertipo();
+    // echo "<pre>";
+    // print_r ($tipo);
+    // echo"</pre>";
+    // echo "<pre>";
+    // print_r ($menu);
+    // echo"</pre>";
+    $this->view->mostrarMenu($tipo,$menu);
   }
 
   public function nosotros()
   {
     $this->view->mostrarNosotros();
   }
+
+
 
 
 }

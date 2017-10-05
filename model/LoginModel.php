@@ -7,3 +7,4 @@ class LoginModel extends Model
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 }
+?>
