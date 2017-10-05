@@ -12,7 +12,7 @@ class ConfigApp
       'contacto' =>  'RisottoController#contacto',
       'login' =>  'LoginController#login',
       'verificarUsuario' =>  'LoginController#verificarUsuario',
-      'logout' => 'LoginController#destroy'
+      'logout' => 'LoginController#cerrarSesion'
 
   ];
 }

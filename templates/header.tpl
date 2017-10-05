@@ -50,7 +50,8 @@
                 <li class="active"> <a href="contacto" id= "nav_contacto"> Contacto </a> </li>
                 <li class="active"> <a href="nosotros" id= "nav_nosotros"> Nosotros </a> </li>
                 <li class="active"> <a href="login" id= "login"> Iniciar Sesion </a> </li>
-                
+                <li class="active"> <a href="logout" id= "logout"> cerrar sesion </a> </li>
+
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->

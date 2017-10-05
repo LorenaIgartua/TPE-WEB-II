@@ -37,11 +37,11 @@ class LoginController extends Controller
       }
   }
 
-  public function destroy()
+  public function cerrarSesion()
   {
-    // session_start();
-    // session_destroy();
-    // header('Location: '.LOGIN);
+    session_start();
+    session_destroy();
+    header('Location: '.HOME);
   }
 }
 
