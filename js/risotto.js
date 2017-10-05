@@ -10,6 +10,10 @@ $(document).ready(function(){
   });
 });
 
+$ ("#login").on ("click", function (evento) {
+  cargarSeccion(evento,"login");
+});
+
   $ ("#nav_logo").on ("click", function (evento) {
     cargarSeccion(evento,"home");
 });
@@ -43,4 +47,4 @@ function cargarSeccion(evento,seccion) {
         mostrar_render(data);
       }
     });
-}
+};

@@ -10,6 +10,9 @@ class ConfigApp
       'nosotros' =>  'RisottoController#nosotros',
       'menu' =>  'RisottoController#menu',
       'contacto' =>  'RisottoController#contacto',
+      'login' =>  'LoginController#login',
+      'verificarUsuario' =>  'LoginController#verificarUsuario',
+      'logout' => 'LoginController#destroy'
 
   ];
 }

@@ -7,7 +7,8 @@
   include_once 'view/View.php';
   include_once 'controller/Controller.php';
   include_once 'controller/RisottoController.php';
-
+  include_once 'controller/LoginController.php';
+  include_once 'controller/SeguridadController.php';
 
 
 function parseURL($url)

@@ -8,11 +8,13 @@ include_once 'model/RisottoModel.php';
 
 class RisottoController extends Controller
 {
-  function __construct ()
-  {
+    function __construct ()  {
+    // parent::__construct();
     $this->view = new RisottoView();
     $this->model = new RisottoModel();
   }
+
+
 
   public function index()
   {
