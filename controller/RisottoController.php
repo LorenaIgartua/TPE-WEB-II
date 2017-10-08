@@ -42,12 +42,9 @@ class RisottoController extends Controller
     $id_menu = isset($_POST['id_menu']) ? $_POST['id_menu'] : null;
     $palabra = isset($_POST['palabra']) ? $_POST['palabra'] : null;
     $valor = isset($_POST['valor']) ? $_POST['valor'] : null;
-
     $tipo = $this->model->obtenerTipoMenu();
     $platos = $this->model->obtenerPlatos($id_menu, $palabra, $valor);
     $this->view->mostrarMenu($tipo, $platos,"");
-
-
 
     }
   }

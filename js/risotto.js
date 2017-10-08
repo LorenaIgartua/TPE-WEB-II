@@ -10,17 +10,9 @@ $(document).ready(function(){
   // });
 });
 
-// $ ("#login").on ("submit", function (event) {
-//   cargarSeccion(event,"verificar");
-// });
-
   $ ("#nav_logo").on ("click", function (event) {
     cargarSeccion(event,"home")
 });
-
-// $ ("#iniciarSesion").on ("click", function (event) {
-//   cargarSeccion(event,"iniciarSesion")
-// });
 
 $("#nav_inicio").on ("click", function(event) {
   cargarSeccion(event,"home");
@@ -35,11 +27,9 @@ $("#nav_contacto").on("click", function(event) {
   cargarSeccion(event,"contacto")
   });
 
-
 $("#nav_nosotros").on("click", function(event) {
     cargarSeccion(event,"nosotros")
 });
-
 
 $("#menuAdmin").on("click", function(event) {
     cargarSeccion(event,"menuAdmin")
@@ -48,15 +38,10 @@ $("#menuAdmin").on("click", function(event) {
 function mostrar_render (data){
     $("#render").html(data);
 };
-//
-
-
-
 
 
 function cargarSeccion(event,seccion) {
   event.preventDefault();
-  // alert ("esta por cargarSeccion");
     $.ajax({
       url: document.location.href+seccion,
       success: function(data) {
@@ -67,14 +52,9 @@ function cargarSeccion(event,seccion) {
 
 $(".eliminar").on("submit",function(event) {
     event.preventDefault();
-
-let serializedData = $(this).serialize();
-  //  alert(serializedData);
-//
-  //  alert(document.location.href+"eliminar"+serializedData);
+    let serializedData = $(this).serialize();
    $.post(document.location.href+"eliminar", serializedData,
                 function(response) {
-                    //  alert("Response: "+response);
                   $("#render").html(response);
 
    });
@@ -83,8 +63,6 @@ let serializedData = $(this).serialize();
   $("#login").on("submit",function(event) {
       event.preventDefault();
       let serializedData = $(this).serialize();
-      // alert(serializedData);
-    //  alert(document.location.href+"modificar"+serializedData);
       $.post(document.location.href+"verificarUsuario", serializedData,
         function(response) {
           $("#render").html(response);
@@ -95,8 +73,6 @@ let serializedData = $(this).serialize();
   $(".modificar").on("submit",function(event) {
       event.preventDefault();
       let serializedData = $(this).serialize();
-      // alert(serializedData);
-    //  alert(document.location.href+"modificar"+serializedData);
       $.post(document.location.href+"modificar", serializedData,
         function(response) {
           $("#render").html(response);
@@ -105,10 +81,7 @@ let serializedData = $(this).serialize();
 
   $("#actualizar").on("submit",function(event) {
       event.preventDefault();
-      // alert("hola");
       let serializedData = $(this).serialize();
-    //  alert(serializedData);
-    //  alert(document.location.href+"modificar"+serializedData);
       $.post(document.location.href+"actualizar", serializedData,
         function(response) {
           $("#render").html(response);
@@ -117,41 +90,27 @@ let serializedData = $(this).serialize();
 
   $("#formulario").on("submit",function(event) {
     event.preventDefault();
-    // alert("hola");
     let serializedData = $(this).serialize();
-    // alert(serializedData);
-    // alert(document.location.href+"agregar"+serializedData);
     $.post(document.location.href+"agregar", serializedData,
         function(response) {
-          // alert("Response: "+response);
           $("#render").html(response);
         });
     });
 
 $("#filtro").on("submit",function(event) {
- event.preventDefault();
-
-let serializedData = $(this).serialize();
-    // alert(serializedData);
-    // alert(document.location.href+"menu"+serializedData);
-   $.post(document.location.href+"menu", serializedData,
+    event.preventDefault();
+    let serializedData = $(this).serialize();
+    $.post(document.location.href+"menu", serializedData,
                 function(response) {
-                    //  alert("Response: "+response);
-                  $("#render").html(response);
-
-   });
+                $("#render").html(response);
+          });
      });
 
    $("#filtroAdm").on("submit",function(event) {
     event.preventDefault();
-
-   let serializedData = $(this).serialize();
-       // alert(serializedData);
-       // alert(document.location.href+"menu"+serializedData);
+    let serializedData = $(this).serialize();
       $.post(document.location.href+"menuAdmin", serializedData,
                    function(response) {
-                       //  alert("Response: "+response);
-                     $("#render").html(response);
-
+                       $("#render").html(response);
       });
 });

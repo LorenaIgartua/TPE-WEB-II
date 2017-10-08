@@ -9,7 +9,6 @@ class View
   function __construct()
   {
     $this->smarty = new Smarty();
-    // $this->smarty->debugging = true;
     $this->smarty->assign('titulo', 'RISOTTO');
   }
 }

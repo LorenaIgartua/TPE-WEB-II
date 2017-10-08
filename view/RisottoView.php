@@ -20,7 +20,6 @@ class RisottoView extends View
   }
 
   function mostrarMenu ($tipo,$menu,$plato){
-    // print_r($tipo);
     $this->smarty->assign('tipo', $tipo);
     $this->smarty->assign('menu', $menu);
     $this->smarty->assign('plato', $plato);
@@ -28,14 +27,11 @@ class RisottoView extends View
   }
 
   function traerPlato ($tipo,$menu,$plato){
-    // print_r($tipo);
     $this->smarty->assign('plato', $plato);
     $this->smarty->assign('tipo', $tipo);
     $this->smarty->assign('menu', $menu);
     return  $this->smarty->display('templates/Menu.tpl');
   }
-
-
 
 }
 
