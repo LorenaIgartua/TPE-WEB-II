@@ -46,10 +46,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
 
-                <li class="active"> <a href="home" id= "nav_inicio"> Inicio </a> </li>
-                <li class="active"> <a href="menu" id= "nav_menu"> Menu </a> </li>
-                <li class="active"> <a href="contacto" id= "nav_contacto"> Contacto </a> </li>
-                <li class="active"> <a href="nosotros" id= "nav_nosotros"> Nosotros </a> </li>
+                <li class="active"> <a href= "#" id= "nav_inicio"> Inicio </a> </li>
+                <li class="active"> <a href= "#" id= "nav_menu"> Menu </a> </li>
+                <li class="active"> <a  href= "#" id= "nav_contacto"> Contacto </a> </li>
+                <li class="active"> <a href= "#" id= "nav_nosotros"> Nosotros </a> </li>
+
+                <!-- <li class="active"> <a  href= "#" id= "iniciarSesion"> Administracion </a> </li> -->
+                  <li class="active"> <a href= "#" id= "menuAdmin"> Panel de Administracion </a> </li>
                 <!-- <li class="active"> <a href="login" id= "login"> Iniciar Sesion </a> </li> -->
                 <!-- <li class="active"> <a href="logout" id= "logout"> cerrar sesion </a> </li> -->
 
@@ -62,9 +65,4 @@
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12 "> <!-- cuerpo -->
 
-
-  <div class="sesion">
-      <a  id = "iniciarSesion"><button  class="btn btn-warning btn-lg" >Iniciar Sesion</button></a>
-      <a href="cerrarSesion" id= "cerrarSesion" ><button  class="btn btn-warning btn-lg" >Cerrar Sesion </button></a>
-  </div>
   <div id = "render">

@@ -1,7 +1,7 @@
 <?php
 include_once 'view/MenuView.php';
 include_once 'model/MenuModel.php';
-// include_once 'controller/SeguridadController.php';
+include_once 'controller/SeguridadController.php';
 
 // echo "<pre>";
 // print_r ($menu);
@@ -10,16 +10,16 @@ include_once 'model/MenuModel.php';
 class MenuController extends Controller
 {
 
-    //  private $seguridadController;
+     private $seguridadController;
 
     function __construct ()  {
     // parent::__construct();
     $this->view = new MenuView();
     $this->model = new MenuModel();
-    // $this->seguridadController = new SeguridadController();
+    $this->seguridadController = new SeguridadController();
   }
 
-  public function menu()
+  public function menuAdmin()
   {
     $id_menu = isset($_POST['id_menu']) ? $_POST['id_menu'] : null;
     $palabra = isset($_POST['palabra']) ? $_POST['palabra'] : null;
@@ -29,9 +29,9 @@ class MenuController extends Controller
     $platos = $this->model->obtenerPlatos($id_menu, $palabra, $valor);
 // print_r ($_SESSION['USER']);
     // if (!isset($_SESSION['USER']))
-    // $this->view->mostrarMenuUsuario($tipo, $platos,"");
+    $this->view->mostrarMenuAdmin($tipo, $platos,"");
     // else
-    $this->view->mostrarMenu($tipo, $platos,"");
+    // $this->view->mostrarMenu($tipo, $platos,"");
 
     // $this->view->mostrarMenu($tipo, $platos,"");
   }
@@ -54,7 +54,6 @@ class MenuController extends Controller
     $id_menu =  null;
     $palabra =  null;
     $valor =  null;
-    echo ("llegue");
     $tipo = $this->model->obtenerTipoMenu();
     $platos = $this->model->obtenerPlatos($id_menu, $palabra, $valor);
     $plato = $this->model->obtenerPlato($id_plato);
@@ -70,7 +69,7 @@ class MenuController extends Controller
     // echo "<pre>";
     // print_r ($plato);
     // echo"</pre>";
-     $this->view->mostrarMenu($tipo, $platos, $plato);
+     $this->view->mostrarMenuAdmin($tipo, $platos, $plato);
   }
 
   public function agregar ()
@@ -82,14 +81,14 @@ class MenuController extends Controller
     $descripcion= isset($_POST['descripcion']) ? $_POST['descripcion'] : "";
     $valor = isset($_POST['valor']) ? $_POST['valor'] : "";
     $tipo = $this->model->agregarPlato($id_menu, $nombre, $descripcion, $valor);
-    header('Location: '.MENU);
+    header('Location: '.MENUADMIN);
   }
 
   public function eliminar ()
   {
     $id_plato = $_POST['id_plato'];
     $this->model->eliminarPlato($id_plato);
-    header('Location: '.MENU);
+    header('Location: '.MENUADMIN);
   }
 
 
@@ -102,7 +101,7 @@ class MenuController extends Controller
     $valor = isset($_POST['valor']) ? $_POST['valor'] : "";
     // echo($id_plato. $id_menu. $nombre.$descripcion.$valor);
      $tipo = $this->model->actualizarPlato($id_menu, $nombre, $descripcion, $valor, $id_plato);
-     header('Location: '.MENU);
+     header('Location: '.MENUADMIN);
   }
 
 

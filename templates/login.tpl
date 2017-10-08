@@ -15,7 +15,7 @@
             {if !empty($error) }
               <div class="alert alert-danger" role="alert">{$error}</div>
             {/if}
-            <button type="submit" class="btn btn-default">Login</button>
+            <button type="submit" class="btn btn-default">Iniciar Sesion</button>
           </form>
         </div>
       </div>

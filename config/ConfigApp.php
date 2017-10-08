@@ -9,7 +9,7 @@ class ConfigApp
       'home' =>  'RisottoController#home',
       'nosotros' =>  'RisottoController#nosotros',
       'menu' =>  'RisottoController#menu',
-      'menuAdm' =>  'MenuController#menu',
+      'menuAdmin' =>  'MenuController#menuAdmin',
       'contacto' =>  'RisottoController#contacto',
       'iniciarSesion' =>  'LoginController#iniciarSesion', //iniciarSesion
       'verificarUsuario' =>  'LoginController#verificarUsuario',

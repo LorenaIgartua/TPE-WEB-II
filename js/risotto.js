@@ -18,9 +18,9 @@ $(document).ready(function(){
     cargarSeccion(event,"home")
 });
 
-$ ("#iniciarSesion").on ("click", function (event) {
-  cargarSeccion(event,"iniciarSesion")
-});
+// $ ("#iniciarSesion").on ("click", function (event) {
+//   cargarSeccion(event,"iniciarSesion")
+// });
 
 $("#nav_inicio").on ("click", function(event) {
   cargarSeccion(event,"home");
@@ -38,6 +38,11 @@ $("#nav_contacto").on("click", function(event) {
 
 $("#nav_nosotros").on("click", function(event) {
     cargarSeccion(event,"nosotros")
+});
+
+
+$("#menuAdmin").on("click", function(event) {
+    cargarSeccion(event,"menuAdmin")
 });
 
 function mostrar_render (data){
@@ -135,10 +140,18 @@ let serializedData = $(this).serialize();
                   $("#render").html(response);
 
    });
+     });
 
+   $("#filtroAdm").on("submit",function(event) {
+    event.preventDefault();
 
+   let serializedData = $(this).serialize();
+       // alert(serializedData);
+       // alert(document.location.href+"menu"+serializedData);
+      $.post(document.location.href+"menuAdmin", serializedData,
+                   function(response) {
+                       //  alert("Response: "+response);
+                     $("#render").html(response);
 
-
-
-
-  });
+      });
+});

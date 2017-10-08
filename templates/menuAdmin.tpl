@@ -1,9 +1,10 @@
 
 <div class="cuerpo" id= "numero_de_grupo">
+  <a href="cerrarSesion" id= "cerrarSesion" ><button  class="btn btn-warning btn-lg" >Cerrar Sesion </button></a>
 
   <div class="menu col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-    <form id= "filtro" class="form-horizontal" method="post" action="menu">
+    <form id= "filtroAdm" class="form-horizontal" method="post" >
 
       <select class="form-inline" name="id_menu" id="tipo_plato">
         <option value="">todos</option>

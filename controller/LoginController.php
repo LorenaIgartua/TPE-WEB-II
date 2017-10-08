@@ -34,7 +34,7 @@ class LoginController extends Controller
             echo $userName;
             $_SESSION['LAST_ACTIVITY'] = time();
               // $this->menu->menu();
-            header('Location: '.MENU);
+            header('Location: '.MENUADMIN);
         }
         else{
             $this->view->mostrarLogin('Usuario o Password incorrectos');

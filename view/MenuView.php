@@ -7,14 +7,14 @@ class MenuView extends View
       $this->smarty->assign('tipo', $tipo);
       $this->smarty->assign('menu', $menu);
       $this->smarty->assign('plato', $plato);
-        $this->smarty->display('templates/menu.tpl');
+        $this->smarty->display('templates/menuAdmin.tpl');
   }
 
-  function mostrarMenuUsuario ($tipo,$menu,$plato){
+  function mostrarMenuAdmin ($tipo,$menu,$plato){
       $this->smarty->assign('tipo', $tipo);
       $this->smarty->assign('menu', $menu);
       $this->smarty->assign('plato', $plato);
-        $this->smarty->display('templates/menuUsuario.tpl');
+        $this->smarty->display('templates/menuAdmin.tpl');
   }
 
 
