@@ -35,10 +35,6 @@ class RisottoView extends View
     return  $this->smarty->display('templates/Menu.tpl');
   }
 
-// function formularioModificar($plato){
-//    $this->smarty->assign('plato', $plato);
-//    return  $this->smarty->display('templates/formularioModificar.tpl');
-// }
 
 
 }

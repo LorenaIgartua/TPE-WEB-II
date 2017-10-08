@@ -8,15 +8,15 @@ class ConfigApp
       '' =>  'RisottoController#index',
       'home' =>  'RisottoController#home',
       'nosotros' =>  'RisottoController#nosotros',
-      'menu' =>  'RisottoController#menu',
+      'menu' =>  'MenuController#menu',
       'contacto' =>  'RisottoController#contacto',
-      'login' =>  'LoginController#login', //iniciarSesion
+      'iniciarSesion' =>  'LoginController#iniciarSesion', //iniciarSesion
       'verificarUsuario' =>  'LoginController#verificarUsuario',
-      'logout' => 'LoginController#cerrarSesion', // cerrarSesion
-      'agregar' => 'RisottoController#agregar',
-      'eliminar' => 'RisottoController#eliminar',
-      'modificar' => 'RisottoController#modificar', /// este es el que carga el formulario
-      'actualizar' => 'RisottoController#actualizar'
+      'cerrarSesion' => 'LoginController#cerrarSesion', // cerrarSesion
+      'agregar' => 'MenuController#agregar',
+      'eliminar' => 'MenuController#eliminar',
+      'modificar' => 'MenuController#modificar', /// este es el que carga el formulario
+      'actualizar' => 'MenuController#actualizar'
 
   ];
 }

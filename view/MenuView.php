@@ -9,6 +9,15 @@ class MenuView extends View
         $this->smarty->display('templates/menu.tpl');
   }
 
+
+
+
+function formularioModificar($plato){
+   $this->smarty->assign('plato', $plato);
+   return  $this->smarty->display('templates/formularioModificar.tpl');
+}
+
+
 }
 
  ?>
