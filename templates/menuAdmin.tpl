@@ -1,7 +1,9 @@
+<div class="cuerpo">
+
 
 <div class="cuerpo" id= "numero_de_grupo">
   <a href="cerrarSesion" id= "cerrarSesion" ><button  class="btn btn-warning btn-lg" >Cerrar Sesion </button></a>
-
+</div>
   <div class="menu col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
     <form id= "filtroAdm" class="form-horizontal" method="post" >
@@ -21,8 +23,6 @@
     </form>
 
   </div>
-
-
 
   <div class="formulario_rest">
     {if empty($plato) }
@@ -125,4 +125,5 @@
 <script src="js/bootstrap.min.js"></script>
  <script type="text/javascript" src = "js/risotto.js"></script>
     <script type="text/javascript" src = "js/menu.js"></script>
+</div>
 </div>

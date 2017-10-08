@@ -1,6 +1,7 @@
 //--------------------- Render ------------------------------
 //-----------------------------------------------------------
 $(document).ready(function(){
+
   // $.ajax({
   //   url: document.location.href+"home",
   //   success: function(data) {
@@ -50,67 +51,46 @@ function cargarSeccion(event,seccion) {
     });
 };
 
-$(".eliminar").on("submit",function(event) {
-    event.preventDefault();
-    let serializedData = $(this).serialize();
-   $.post(document.location.href+"eliminar", serializedData,
-                function(response) {
-                  $("#render").html(response);
-
+function renderPost(destino,serializedData) {
+   $.post(document.location.href+destino, serializedData,
+          function(response) {
+          mostrar_render(response);
    });
-  });
+      };
+
+$(".eliminar").on("submit", function (event) {
+    event.preventDefault();
+    renderPost("eliminar", $(this).serialize());
+});
+
 
   $("#login").on("submit",function(event) {
       event.preventDefault();
-      let serializedData = $(this).serialize();
-      $.post(document.location.href+"verificarUsuario", serializedData,
-        function(response) {
-          $("#render").html(response);
-        });
-  });
+      renderPost("verificarUsuario", $(this).serialize());
+});
 
 
   $(".modificar").on("submit",function(event) {
       event.preventDefault();
-      let serializedData = $(this).serialize();
-      $.post(document.location.href+"modificar", serializedData,
-        function(response) {
-          $("#render").html(response);
-        });
-  });
+      renderPost("modificar", $(this).serialize());
+});
 
   $("#actualizar").on("submit",function(event) {
       event.preventDefault();
-      let serializedData = $(this).serialize();
-      $.post(document.location.href+"actualizar", serializedData,
-        function(response) {
-          $("#render").html(response);
-        });
-  });
+      renderPost("actualizar", $(this).serialize());
+});
 
   $("#formulario").on("submit",function(event) {
     event.preventDefault();
-    let serializedData = $(this).serialize();
-    $.post(document.location.href+"agregar", serializedData,
-        function(response) {
-          $("#render").html(response);
-        });
-    });
+    renderPost("agregar", $(this).serialize());
+});
 
 $("#filtro").on("submit",function(event) {
     event.preventDefault();
-    let serializedData = $(this).serialize();
-    $.post(document.location.href+"menu", serializedData,
-                function(response) {
-                $("#render").html(response);
-          });
-     });
+    renderPost("menu", $(this).serialize());
+ });
 
    $("#filtroAdm").on("submit",function(event) {
     event.preventDefault();
-    let serializedData = $(this).serialize();
-      $.post(document.location.href+"menuAdmin", serializedData,
-                   function(response) {
-                       $("#render").html(response);
-      });
+    renderPost("menuAdmin", $(this).serialize());
 });

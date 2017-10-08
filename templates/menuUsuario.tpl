@@ -1,4 +1,4 @@
-
+<div class="cuerpo">
 <div class="cuerpo" id= "numero_de_grupo">
 
   <div class="menu col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -43,7 +43,7 @@
               <td id="precio" class = "celda_precio" >{$platom['valor']}</td>
 
             </td>
-          
+
               </tr>
             {/if}
           {/foreach}
@@ -64,4 +64,5 @@
 <script src="js/bootstrap.min.js"></script>
  <script type="text/javascript" src = "js/risotto.js"></script>
     <script type="text/javascript" src = "js/menu.js"></script>
+</div>
 </div>

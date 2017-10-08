@@ -71,5 +71,4 @@ class MenuController extends Controller
 
 }
 
-
  ?>

@@ -63,6 +63,4 @@
     </div>
   </div>  <!-- fin  barra de navegacion -->
 
-<div class="col-lg-12 col-md-12 col-sm-12 col-sx-12 "> <!-- cuerpo -->
-
-  <div id = "render">
+<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12 "> -->
