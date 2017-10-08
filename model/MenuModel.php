@@ -39,6 +39,14 @@ class MenuModel extends Model
 
 
 
+function actualizarPlato($id_menu, $nombre, $descripcion, $valor, $id_plato){
+  // echo ("antes de modificar ... d_menu ".$id_menu." / "."nombre ".$nombre." / "."descripcion ".$descripcion." / "."valor ".$valor." / ");
+  $sentencia = $this->db->prepare( "UPDATE `plato` SET `id_menu` = ?, `nombre` = ?, `descripcion` = ?, `valor` = ? WHERE `plato`.`id_plato` = ?");
+  $sentencia->execute([$id_menu, $nombre, $descripcion, $valor, $id_plato]);
+
+}
+
+
 function eliminarPlato($id_plato){
   print_r($id_plato);
 

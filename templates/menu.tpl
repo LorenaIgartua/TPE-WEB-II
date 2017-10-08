@@ -23,6 +23,55 @@
 
 
 
+  <div class="formulario_rest">
+    {if empty($plato) }
+
+            <form id= "formulario" class="form-horizontal" method="post" >
+                <select class="form-control" name="id_menu" id="tipo_plato" >
+                {foreach from=$tipo item=nombre_menu}
+                <option value="{$nombre_menu['id_menu']}">{$nombre_menu['nombre']}</option>
+                {/foreach}
+              </select>
+              <label for="exampleInputName2" class="col-sm-2 control-label">Plato</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="plato">
+              <label for="exampleInputName2" class="col-sm-2 control-label">Ingredientes</label>
+              <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingredientes">
+              <label for="exampleInputName2" class="col-sm-2 control-label">Precio</label>
+              <input type="text" class="form-control" id="valor" name="valor" placeholder="precio">
+              <button type="submit" class="btn btn-default" >Agregar</button>
+            </form>
+        {else}
+
+        <form id= "actualizar" class="form-horizontal" method="post" >
+            <input type="hidden" name="id_plato" value="{$plato[0]['id_plato']}">
+            <select class="form-control" name="id_menu" id="tipo_plato" >
+            {foreach from=$tipo item=nombre_menu}
+            <option value="{$nombre_menu['id_menu']}"
+              {if ( {$nombre_menu['id_menu']} == {$plato[0]['id_menu']})}
+                  selected
+              {/if}
+            >{$nombre_menu['nombre']}</option>
+            {/foreach}
+          </select>
+          <label for="exampleInputName2" class="col-sm-2 control-label">Plato</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="plato" value="{$plato[0]['nombre']}">
+          <label for="exampleInputName2" class="col-sm-2 control-label">Ingredientes</label>
+          <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingredientes" value="{$plato[0]['descripcion']}">
+          <label for="exampleInputName2" class="col-sm-2 control-label">Precio</label>
+          <input type="text" class="form-control" id="valor" name="valor" placeholder="precio" value="{$plato[0]['valor']}">
+          <button type="submit" class="btn btn-default" >Modificar</button>
+          <!-- <button type="nada" class="btn btn-default" >cancelar</button> -->
+        </form>
+
+
+
+    {/if}
+
+
+
+
+  </div>
+
 
   <div class="menu col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
@@ -65,25 +114,7 @@
 
   </div>
 
-  <div class="formulario_rest">
 
-            <form id= "formulario" class="form-horizontal" method="post" action="agregar">
-                <select class="form-control" name="id_menu" id="tipo_plato" >
-                {foreach from=$tipo item=nombre_menu}
-                <option value="{$nombre_menu['id_menu']}">{$nombre_menu['nombre']}</option>
-                {/foreach}
-              </select>
-              <label for="exampleInputName2" class="col-sm-2 control-label">Plato</label>
-              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="plato">
-              <label for="exampleInputName2" class="col-sm-2 control-label">Ingredientes</label>
-              <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingredientes">
-              <label for="exampleInputName2" class="col-sm-2 control-label">Precio</label>
-              <input type="text" class="form-control" id="valor" name="valor" placeholder="precio">
-              <button type="submit" class="btn btn-default" >Agregar</button>
-            </form>
-
-
-  </div>
 
 
 

@@ -63,9 +63,9 @@ $(".eliminar").on("submit",function(event) {
     event.preventDefault();
 
 let serializedData = $(this).serialize();
-   alert(serializedData);
-
-   alert(document.location.href+"eliminar"+serializedData);
+  //  alert(serializedData);
+//
+  //  alert(document.location.href+"eliminar"+serializedData);
    $.post(document.location.href+"eliminar", serializedData,
                 function(response) {
                     //  alert("Response: "+response);
@@ -77,7 +77,7 @@ let serializedData = $(this).serialize();
   $(".modificar").on("submit",function(event) {
       event.preventDefault();
       let serializedData = $(this).serialize();
-    //  alert(serializedData);
+      // alert(serializedData);
     //  alert(document.location.href+"modificar"+serializedData);
       $.post(document.location.href+"modificar", serializedData,
         function(response) {
@@ -85,16 +85,27 @@ let serializedData = $(this).serialize();
         });
   });
 
+  $("#actualizar").on("submit",function(event) {
+      event.preventDefault();
+      // alert("hola");
+      let serializedData = $(this).serialize();
+    //  alert(serializedData);
+    //  alert(document.location.href+"modificar"+serializedData);
+      $.post(document.location.href+"actualizar", serializedData,
+        function(response) {
+          $("#render").html(response);
+        });
+  });
 
   $("#formulario").on("submit",function(event) {
     event.preventDefault();
-    alert("hola");
+    // alert("hola");
     let serializedData = $(this).serialize();
-    alert(serializedData);
-    alert(document.location.href+"menu"+serializedData);
-    $.post(document.location.href+"menu", serializedData,
+    // alert(serializedData);
+    // alert(document.location.href+"agregar"+serializedData);
+    $.post(document.location.href+"agregar", serializedData,
         function(response) {
-          alert("Response: "+response);
+          // alert("Response: "+response);
           $("#render").html(response);
         });
     });
@@ -103,12 +114,18 @@ $("#filtro").on("submit",function(event) {
  event.preventDefault();
 
 let serializedData = $(this).serialize();
-    alert(serializedData);
-    alert(document.location.href+"menu"+serializedData);
+    // alert(serializedData);
+    // alert(document.location.href+"menu"+serializedData);
    $.post(document.location.href+"menu", serializedData,
                 function(response) {
-                     alert("Response: "+response);
+                    //  alert("Response: "+response);
                   $("#render").html(response);
 
    });
+
+
+
+
+
+
   });

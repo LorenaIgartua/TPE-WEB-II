@@ -8,8 +8,8 @@ class SeguridadController extends Controller
     session_start();
     if(isset($_SESSION['USER'])){
       // echo $_SESSION['USER'];
-      if (time() - $_SESSION['LAST_ACTIVITY'] > 100) {
-        header('Location: '.LOGOUT);
+      if (time() - $_SESSION['LAST_ACTIVITY'] > 1000000) {
+        header('Location: '.CERRARSESION);
         die();
       }
       $_SESSION['LAST_ACTIVITY'] = time();

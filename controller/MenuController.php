@@ -48,14 +48,29 @@ class MenuController extends Controller
     $id_menu =  null;
     $palabra =  null;
     $valor =  null;
+    echo ("llegue");
     $tipo = $this->model->obtenerTipoMenu();
     $platos = $this->model->obtenerPlatos($id_menu, $palabra, $valor);
     $plato = $this->model->obtenerPlato($id_plato);
-    $this->view->mostrarMenu($tipo, $platos, $plato);
+
+    // echo "<pre>";
+    // print_r ($tipo);
+    // echo"</pre>";
+    //
+    // echo "<pre>";
+    // print_r ($platos);
+    // echo"</pre>";
+    //
+    // echo "<pre>";
+    // print_r ($plato);
+    // echo"</pre>";
+     $this->view->mostrarMenu($tipo, $platos, $plato);
   }
 
   public function agregar ()
   {
+
+    // echo("llegue");
     $id_menu = isset($_POST['id_menu']) ? $_POST['id_menu'] : 1; // acomodar
     $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : "";
     $descripcion= isset($_POST['descripcion']) ? $_POST['descripcion'] : "";
@@ -72,6 +87,17 @@ class MenuController extends Controller
   }
 
 
+  public function actualizar ()
+  {
+    $id_plato = isset($_POST['id_plato']) ? $_POST['id_plato'] : "";
+    $id_menu = isset($_POST['id_menu']) ? $_POST['id_menu'] : 1; // acomodar
+    $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : "";
+    $descripcion= isset($_POST['descripcion']) ? $_POST['descripcion'] : "";
+    $valor = isset($_POST['valor']) ? $_POST['valor'] : "";
+    // echo($id_plato. $id_menu. $nombre.$descripcion.$valor);
+     $tipo = $this->model->actualizarPlato($id_menu, $nombre, $descripcion, $valor, $id_plato);
+     header('Location: '.MENU);
+  }
 
 
 
