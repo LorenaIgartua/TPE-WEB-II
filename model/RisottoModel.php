@@ -2,32 +2,57 @@
 
 class RisottoModel extends Model
 {
-  function obtenerMenu(){
-                    $sentencia = $this->db->prepare( "Select
-t.id_menu as 'menu_id_menu',
-t.nombre as 'menu_nombre',
-p.id_plato as 'plato_id_plato',
-p.nombre as 'plato_nombre',
-p.descripcion as 'plato_descripcion',
-p.valor as 'plato_valor'
-from
-tipo_menu t,
-plato p
-where
-t.id_menu = p.id_menu
-");
+  function obtenerTipoMenu(){
+                    $sentencia = $this->db->prepare( "Select * from tipo_menu");
              $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  function obtenertipo(){
-                    $sentencia = $this->db->prepare( "Select id_menu as 'tipo_id_menu',
-                      nombre as 'tipo_nombre'
-                      from
-                      tipo_menu");
+  function obtenerPlatos($id_menu, $palabra, $valor){
+    // echo ("id_menu ".$id_menu." / "."nombre ".$nombre." / "."descripcion ".$descripcion." / "."valor ".$valor." / ");
+                  $prepare = "Select *  from plato where 1=1";
+                    if (isset($id_menu) && ($id_menu!=""))
+                        $prepare = $prepare." and id_menu = ".$id_menu;
+
+
+                    if (isset($palabra) && ($palabra!=""))
+                        $prepare = $prepare." and (nombre like '%".$palabra."%' or descripcion like '%".$palabra."%' ) ";
+
+
+                    echo $prepare;
+                      $sentencia = $this->db->prepare( $prepare);
+                    // $sentencia = $this->db->prepare( "Select *  from plato ");
                       $sentencia->execute();
                       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
         }
+
+
+      function agregarPlato($id_menu, $nombre, $descripcion,$valor){
+        echo ("antes de agregar ... d_menu ".$id_menu." / "."nombre ".$nombre." / "."descripcion ".$descripcion." / "."valor ".$valor." / ");
+        $sentencia = $this->db->prepare( "INSERT INTO plato (id_menu, nombre, descripcion, valor) VALUES (?,?,?,?)");
+        $sentencia->execute([$id_menu, $nombre, $descripcion, $valor]);
+
+
+      }
+
+
+
+function eliminarPlato($id_plato){
+  print_r($id_plato);
+
+  $sentencia = $this->db->prepare( "DELETE FROM plato where id_plato = ?");
+  $sentencia->execute([$id_plato]);
+
+
+}
+
+function obtenerPlato($id_plato){
+          $sentencia = $this->db->prepare( "Select * from plato where id_plato = ?");
+          $sentencia->execute([$id_plato]);
+          return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
 }
 
  ?>

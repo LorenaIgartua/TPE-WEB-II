@@ -10,9 +10,13 @@ class ConfigApp
       'nosotros' =>  'RisottoController#nosotros',
       'menu' =>  'RisottoController#menu',
       'contacto' =>  'RisottoController#contacto',
-      'login' =>  'LoginController#login',
+      'login' =>  'LoginController#login', //iniciarSesion
       'verificarUsuario' =>  'LoginController#verificarUsuario',
-      'logout' => 'LoginController#cerrarSesion'
+      'logout' => 'LoginController#cerrarSesion', // cerrarSesion
+      'agregar' => 'RisottoController#agregar',
+      'eliminar' => 'RisottoController#eliminar',
+      'modificar' => 'RisottoController#modificar', /// este es el que carga el formulario
+      'actualizar' => 'RisottoController#actualizar'
 
   ];
 }

@@ -12,7 +12,8 @@
     <title>{{$titulo}}</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
   </head>
@@ -20,7 +21,7 @@
     <header>
       <div class="row">   <!-- logo y datos -->
         <div class="logo col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <a href="inicio.html" id = "nav_logo"> <img src="images/logo.png" alt="risotto_restaurante" class="logo" > </a>
+          <a href="home" id = "nav_logo"> <img src="images/logo.png" alt="risotto_restaurante" class="logo" > </a>
         </div>
         <div class="col-lg-9 col-md-9 col-sm-12  hidden-xs">
            <p class="direccion">Colombia 702 - Tandil
