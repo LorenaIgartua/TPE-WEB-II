@@ -1,7 +1,7 @@
 <?php
 include_once 'view/MenuView.php';
 include_once 'model/MenuModel.php';
-include_once 'controller/SeguridadController.php';
+// include_once 'controller/SeguridadController.php';
 
 // echo "<pre>";
 // print_r ($menu);
@@ -10,13 +10,13 @@ include_once 'controller/SeguridadController.php';
 class MenuController extends Controller
 {
 
-     private $seguridadController;
+    //  private $seguridadController;
 
     function __construct ()  {
     // parent::__construct();
     $this->view = new MenuView();
     $this->model = new MenuModel();
-    $this->seguridadController = new SeguridadController();
+    // $this->seguridadController = new SeguridadController();
   }
 
   public function menu()
@@ -27,7 +27,13 @@ class MenuController extends Controller
 
     $tipo = $this->model->obtenerTipoMenu();
     $platos = $this->model->obtenerPlatos($id_menu, $palabra, $valor);
+// print_r ($_SESSION['USER']);
+    // if (!isset($_SESSION['USER']))
+    // $this->view->mostrarMenuUsuario($tipo, $platos,"");
+    // else
     $this->view->mostrarMenu($tipo, $platos,"");
+
+    // $this->view->mostrarMenu($tipo, $platos,"");
   }
 
 

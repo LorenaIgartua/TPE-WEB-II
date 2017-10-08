@@ -13,10 +13,11 @@ class SeguridadController extends Controller
         die();
       }
       $_SESSION['LAST_ACTIVITY'] = time();
-      // header('Location: '.MENU);
+         header('Location: '.MENU);
       // echo $_SESSION['LAST_ACTIVITY'];
     }
     else {
+       header('Location: '.HOME);
       header('Location: '.INICIOSESION);
       die();
     }

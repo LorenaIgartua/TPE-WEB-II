@@ -24,7 +24,7 @@ class RisottoView extends View
     $this->smarty->assign('tipo', $tipo);
     $this->smarty->assign('menu', $menu);
     $this->smarty->assign('plato', $plato);
-    return $this->smarty->display('templates/menu.tpl');
+    return $this->smarty->display('templates/menuUsuario.tpl');
   }
 
   function traerPlato ($tipo,$menu,$plato){

@@ -8,7 +8,8 @@ class ConfigApp
       '' =>  'RisottoController#index',
       'home' =>  'RisottoController#home',
       'nosotros' =>  'RisottoController#nosotros',
-      'menu' =>  'MenuController#menu',
+      'menu' =>  'RisottoController#menu',
+      'menuAdm' =>  'MenuController#menu',
       'contacto' =>  'RisottoController#contacto',
       'iniciarSesion' =>  'LoginController#iniciarSesion', //iniciarSesion
       'verificarUsuario' =>  'LoginController#verificarUsuario',

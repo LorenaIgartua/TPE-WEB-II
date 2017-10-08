@@ -64,14 +64,7 @@
 
 
   <div class="sesion">
-
+      <a  id = "iniciarSesion"><button  class="btn btn-warning btn-lg" >Iniciar Sesion</button></a>
       <a href="cerrarSesion" id= "cerrarSesion" ><button  class="btn btn-warning btn-lg" >Cerrar Sesion </button></a>
-
-        <a href="iniciarSesion" id = "iniciarSesion"><button  class="btn btn-warning btn-lg" >Iniciar Sesion</button></a>
-
   </div>
   <div id = "render">
-
-
-
-    

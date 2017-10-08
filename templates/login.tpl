@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
 
-          <form action="verificarUsuario" method="post">
+          <form id = "login" method="post">
             <div class="form-group">
               <label for="usuario">Usuario</label>
               <input type="text" class="form-control" id="usuario" name="usuario" placeholder="roberto.petrusa" required>
@@ -20,7 +20,7 @@
         </div>
       </div>
 
-      
+
       <script src="js/jquery-3.2.1.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="js/bootstrap.min.js"></script>

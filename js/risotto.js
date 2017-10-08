@@ -10,9 +10,9 @@ $(document).ready(function(){
   // });
 });
 
-$ ("#login").on ("click", function (event) {
-  cargarSeccion(event,"login");
-});
+// $ ("#login").on ("submit", function (event) {
+//   cargarSeccion(event,"verificar");
+// });
 
   $ ("#nav_logo").on ("click", function (event) {
     cargarSeccion(event,"home")
@@ -51,6 +51,7 @@ function mostrar_render (data){
 
 function cargarSeccion(event,seccion) {
   event.preventDefault();
+  // alert ("esta por cargarSeccion");
     $.ajax({
       url: document.location.href+seccion,
       success: function(data) {
@@ -73,6 +74,18 @@ let serializedData = $(this).serialize();
 
    });
   });
+
+  $("#login").on("submit",function(event) {
+      event.preventDefault();
+      let serializedData = $(this).serialize();
+      // alert(serializedData);
+    //  alert(document.location.href+"modificar"+serializedData);
+      $.post(document.location.href+"verificarUsuario", serializedData,
+        function(response) {
+          $("#render").html(response);
+        });
+  });
+
 
   $(".modificar").on("submit",function(event) {
       event.preventDefault();
