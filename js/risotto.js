@@ -79,6 +79,11 @@ $(document).on("click", ".eliminarMenu", function (event) {
       renderPost("modificarPlato", {"id_plato": $(this).attr('name')});
 });
 
+// $(document).on("click",".modificarMenu",function(event) {
+//     event.preventDefault();
+//     renderPost("modificarMenu", {"id_menu": $(this).attr('name')});
+// });
+
   $(document).on("submit","#actualizar", function(event) {
       event.preventDefault();
       renderPost("actualizar", $(this).serialize());

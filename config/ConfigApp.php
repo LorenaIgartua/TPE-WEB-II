@@ -18,6 +18,7 @@ class ConfigApp
       'eliminarPlato' => 'MenuController#eliminarPlato',
       'eliminarMenu' => 'MenuController#eliminarMenu',
       'modificarPlato' => 'MenuController#modificarPlato', /// este es el que carga el formulario
+      // 'modificarMenu' => 'MenuController#modificarMenu', /// este es el que carga el formulario
       'actualizar' => 'MenuController#actualizar'
 
   ];
