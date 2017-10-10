@@ -2,13 +2,13 @@
 //-----------------------------------------------------------
 $(document).ready(function(){
 
-  // $.ajax({
-  //   url: document.location.href+"home",
-  //   success: function(data) {
-  //     mostrar_render(data);
-  //
-  //   }
-  // });
+  $.ajax({
+    url: document.location.href+"home",
+    success: function(data) {
+      mostrar_render(data);
+
+    }
+  });
 });
 
   $ ("#nav_logo").on ("click", function (event) {
@@ -58,39 +58,43 @@ function renderPost(destino,serializedData) {
    });
       };
 
-$(".eliminar").on("submit", function (event) {
+$(document).on("click", ".eliminarPlato",function (event) {
     event.preventDefault();
-    renderPost("eliminar", $(this).serialize());
+    renderPost("eliminarPlato", {"id_plato": $(this).attr('name')});
 });
 
+$(document).on("click", ".eliminarMenu", function (event) {
+    event.preventDefault();
+    renderPost("eliminarMenu", {"id_menu": $(this).attr('name')});
+});
 
-  $("#login").on("submit",function(event) {
+  $(document).on("submit","#login",function(event) {
       event.preventDefault();
       renderPost("verificarUsuario", $(this).serialize());
 });
 
 
-  $(".modificar").on("submit",function(event) {
+  $(document).on("click",".modificarPlato",function(event) {
       event.preventDefault();
-      renderPost("modificar", $(this).serialize());
+      renderPost("modificarPlato", {"id_plato": $(this).attr('name')});
 });
 
-  $("#actualizar").on("submit",function(event) {
+  $(document).on("submit","#actualizar", function(event) {
       event.preventDefault();
       renderPost("actualizar", $(this).serialize());
 });
 
-  $("#formulario").on("submit",function(event) {
+  $(document).on("submit","#formulario", function(event) {
     event.preventDefault();
     renderPost("agregar", $(this).serialize());
 });
 
-$("#filtro").on("submit",function(event) {
+$(document).on("submit","#filtro",function(event) {
     event.preventDefault();
     renderPost("menu", $(this).serialize());
  });
 
-   $("#filtroAdm").on("submit",function(event) {
+   $(document).on("submit","#filtroAdm",function(event) {
     event.preventDefault();
     renderPost("menuAdmin", $(this).serialize());
 });

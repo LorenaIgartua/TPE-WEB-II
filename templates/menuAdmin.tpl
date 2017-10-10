@@ -24,6 +24,11 @@
 
   </div>
 
+
+
+
+
+
   <div class="formulario_rest">
     {if empty($plato) }
 
@@ -75,16 +80,23 @@
 
 
   <div class="menu col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
+    {if !empty($error) }
+      <div class="alert alert-danger" role="alert">{$error}</div>
+    {/if}
     <h1>menú</h1>
 
     {foreach from=$tipo item=nombre_menu}
-        <h3>{$nombre_menu['nombre']}</h3>
+
+      <h3>{$nombre_menu['nombre']}
+       <button  class="eliminarMenu btn btn-warning btn-xs " name="{$nombre_menu['id_menu']}" ><span class="glyphicon glyphicon-trash"></span></button>
+       <button  class="modificarMenu btn btn-warning btn-xs" name="{$nombre_menu['id_menu']}"><span class="glyphicon glyphicon-pencil"></span></button>
+      </h3>
+
         <table class="menu" id = "{$nombre_menu['tipo_nombre']}" >
           {foreach from=$menu item=platom}
             {if ($platom['id_menu']==$nombre_menu['id_menu'])}
               <tr>
-                  <td id="plato" class = "celda_plato" >
+              <td id="plato" class = "celda_plato" >
                     <h4>{$platom['nombre']}</h4>
               <br>
                     {$platom['descripcion']}
@@ -93,23 +105,16 @@
 
             </td>
             <td class = "celda_boton" >
-
-              <form class="eliminar" method="post" action="eliminar">
-                <input type="hidden" name="id_plato" value="{$platom['id_plato']}">
-               <button  type="submit" action="menu" class="btn btn-warning btn-lg" name="{$platom['id_plato']}" ><span class="glyphicon glyphicon-trash"></span></button>
-             </form>
-</td><td>
-             <form class="modificar" method="post" action="modificar">
-               <input type="hidden" name="id_plato" value="{$platom['id_plato']}">
-              <button  type="submit" action="menu" class="btn btn-warning btn-lg" name="{$platom['id_plato']}" ><span class="glyphicon glyphicon-pencil"></span></button>
-            </form>
-
+               <button  class="eliminarPlato btn btn-warning btn-lg" name="{$platom['id_plato']}" ><span class="glyphicon glyphicon-trash"></span></button>
+            </td>
+            <td>
+              <button  class="modificarPlato btn btn-warning btn-lg" name="{$platom['id_plato']}" ><span class="glyphicon glyphicon-pencil"></span></button>
             </td>
               </tr>
             {/if}
           {/foreach}
         </table>
-  {/foreach}
+        {/foreach}
 
 
 
@@ -120,10 +125,10 @@
 
 
 
-<script src="js/jquery-3.2.1.min.js"></script>
+<!-- <script src="js/jquery-3.2.1.min.js"></script> -->
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
- <script type="text/javascript" src = "js/risotto.js"></script>
-    <script type="text/javascript" src = "js/menu.js"></script>
+<!-- <script src="js/bootstrap.min.js"></script> -->
+ <!-- <script type="text/javascript" src = "js/risotto.js"></script> -->
+    <!-- <script type="text/javascript" src = "js/menu.js"></script> -->
 </div>
 </div>

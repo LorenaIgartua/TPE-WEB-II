@@ -52,7 +52,7 @@
                 <li class="active"> <a href= "#" id= "nav_nosotros"> Nosotros </a> </li>
 
                 <!-- <li class="active"> <a  href= "#" id= "iniciarSesion"> Administracion </a> </li> -->
-                  <li class="active"> <a href= "#" id= "menuAdmin"> Panel de Administracion </a> </li>
+                  <li class="active"> <a href= "#" id= "menuAdmin"> <span class="glyphicon glyphicon-lock"></span></a> </li>
                 <!-- <li class="active"> <a href="login" id= "login"> Iniciar Sesion </a> </li> -->
                 <!-- <li class="active"> <a href="logout" id= "logout"> cerrar sesion </a> </li> -->
 

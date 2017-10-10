@@ -10,10 +10,11 @@ class MenuView extends View
         $this->smarty->display('templates/menuAdmin.tpl');
   }
 
-  function mostrarMenuAdmin ($tipo,$menu,$plato){
+  function mostrarMenuAdmin ($tipo,$menu,$plato, $error = ''){
       $this->smarty->assign('tipo', $tipo);
       $this->smarty->assign('menu', $menu);
       $this->smarty->assign('plato', $plato);
+      $this->smarty->assign('error', $error);
       $this->smarty->display('templates/menuAdmin.tpl');
   }
 

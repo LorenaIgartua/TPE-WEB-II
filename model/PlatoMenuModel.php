@@ -1,13 +1,7 @@
 <?php
 
-class MenuModel extends Model
+class PlatoMenuModel extends Model
 {
-
-  function obtenerTipoMenu(){
-                    $sentencia = $this->db->prepare( "Select * from tipo_menu");
-             $sentencia->execute();
-    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
-  }
 
   function obtenerPlatos($id_menu, $palabra, $valor){
           $prepare = "Select *  from plato where 1=1";
@@ -42,6 +36,12 @@ function obtenerPlato($id_plato){
 }
 
 
+
+function platosDisponiblesMenu ($id_menu){
+          $sentencia = $this->db->prepare( "Select count(*) from plato where id_menu = ?");
+          $sentencia->execute([$id_menu]);
+          return  $sentencia->fetchAll(PDO::FETCH_ASSOC);
+}
 
 
 

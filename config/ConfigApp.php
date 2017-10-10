@@ -15,8 +15,9 @@ class ConfigApp
       'verificarUsuario' =>  'LoginController#verificarUsuario',
       'cerrarSesion' => 'LoginController#cerrarSesion',
       'agregar' => 'MenuController#agregar',
-      'eliminar' => 'MenuController#eliminar',
-      'modificar' => 'MenuController#modificar', /// este es el que carga el formulario
+      'eliminarPlato' => 'MenuController#eliminarPlato',
+      'eliminarMenu' => 'MenuController#eliminarMenu',
+      'modificarPlato' => 'MenuController#modificarPlato', /// este es el que carga el formulario
       'actualizar' => 'MenuController#actualizar'
 
   ];
