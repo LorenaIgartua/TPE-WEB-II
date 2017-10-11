@@ -8,7 +8,7 @@ h1, h2, h3 {
     font-weight: bolder;
     text-transform: uppercase;
     color: #775f5f;
-    padding: 30px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;
     text-align: center;
   }
 
@@ -107,6 +107,11 @@ div.cuerpo {
    text-transform: capitalize;
 }
 
+div.render {
+ border-bottom: 2px dashed;
+
+}
+
  p.presentacion { /*para modificar estilo parrafo del index.html*/
     text-align: center;
     margin-top: 15%;
@@ -128,7 +133,7 @@ span.valor { /*span que resalta el valor en la pagina de descripcion de la empre
 }
 
 form { /*estilo del formulario de contacto*/
-  margin-top: 10%;
+  margin-top: 1%;
   text-transform: uppercase;
   color: #6b0d6b;
   font-family: Verdana, Arial, Helvetica, sans-serif;

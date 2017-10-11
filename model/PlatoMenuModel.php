@@ -35,8 +35,6 @@ function obtenerPlato($id_plato){
           return $sentencia->fetchAll(PDO::FETCH_ASSOC);
 }
 
-
-
 function platosDisponiblesMenu ($id_menu){
           $sentencia = $this->db->prepare( "Select count(*) from plato where id_menu = ?");
           $sentencia->execute([$id_menu]);

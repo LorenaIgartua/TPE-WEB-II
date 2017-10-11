@@ -14,13 +14,14 @@ class ConfigApp
       'iniciarSesion' =>  'LoginController#iniciarSesion',
       'verificarUsuario' =>  'LoginController#verificarUsuario',
       'cerrarSesion' => 'LoginController#cerrarSesion',
-      'agregar' => 'MenuController#agregar',
+      'agregarPlato' => 'MenuController#agregarPlato',
+      'agregarMenu' => 'MenuController#agregarMenu',
       'eliminarPlato' => 'MenuController#eliminarPlato',
       'eliminarMenu' => 'MenuController#eliminarMenu',
-      'modificarPlato' => 'MenuController#modificarPlato', /// este es el que carga el formulario
-      // 'modificarMenu' => 'MenuController#modificarMenu', /// este es el que carga el formulario
-      'actualizar' => 'MenuController#actualizar'
-
+      'cargarPlato' => 'MenuController#cargarPlato', /// este es el que carga el formulario
+      'cargarMenu' => 'MenuController#cargarMenu', /// este es el que carga el formulario
+      'actualizarPlato' => 'MenuController#actualizarPlato',
+      'actualizarMenu' => 'MenuController#actualizarMenu'
   ];
 }
 

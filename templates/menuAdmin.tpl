@@ -1,96 +1,62 @@
 <div class="cuerpo">
 
     <h1>menú</h1>
-<div class="cuerpo" id= "numero_de_grupo">
+<div class="cuerpo" >
   <a href="cerrarSesion" id= "cerrarSesion" ><button  class="btn btn-warning btn-lg" >Cerrar Sesion </button></a>
 </div>
 
-<div class="menu col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <form id= "filtroAdm" class="form-horizontal" method="post" >
-      <select class="form-inline" name="id_menu" id="tipo_plato">
-        <option value="">todos</option>
-          {foreach from=$tipo item=nombre_menu}
-          <option value="{$nombre_menu['id_menu']}">{$nombre_menu['nombre']}</option>
-          {/foreach}
-          </select>
-      <label for="exampleInputName2" class="form-inline">Contenga</label>
-      <input type="text" name="palabra" class="form-inline" id="palabra" placeholder="contenga..">
-      <label for="exampleInputName2" class="form-inline">Precio</label>
-      <input type="text" name="valor"class="form-inline" id="precio" placeholder="precio">
-       <button type="submit"  class="btn btn-default" >Filtrar...</button>
-    </form>
-</div>
+  {include file="formFiltroAdmin.tpl"}
+
 
 <div class="formulario_rest">
-  {if empty($plato) }
-    <form id= "formulario" class="form-horizontal" method="post" >
-        <select class="form-control" name="id_menu" id="tipo_plato" >
-        {foreach from=$tipo item=nombre_menu}
-        <option value="{$nombre_menu['id_menu']}">{$nombre_menu['nombre']}</option>
-        {/foreach}
-        </select>
-        <label for="exampleInputName2" class="col-sm-2 control-label">Plato</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="plato">
-        <label for="exampleInputName2" class="col-sm-2 control-label">Ingredientes</label>
-        <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingredientes">
-        <label for="exampleInputName2" class="col-sm-2 control-label">Precio</label>
-        <input type="text" class="form-control" id="valor" name="valor" placeholder="precio">
-        <button type="submit" class="btn btn-default" >Agregar</button>
-    </form>
-    {else}
-    <form id= "actualizar" class="form-horizontal" method="post" >
-      <input type="hidden" name="id_plato" value="{$plato[0]['id_plato']}">
-      <select class="form-control" name="id_menu" id="tipo_plato" >
-      {foreach from=$tipo item=nombre_menu}
-      <option value="{$nombre_menu['id_menu']}"
-      {if ( {$nombre_menu['id_menu']} == {$plato[0]['id_menu']})}
-      selected
-      {/if}
-      >{$nombre_menu['nombre']}</option>
-      {/foreach}
-      </select>
-      <label for="exampleInputName2" class="col-sm-2 control-label">Plato</label>
-      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="plato" value="{$plato[0]['nombre']}">
-      <label for="exampleInputName2" class="col-sm-2 control-label">Ingredientes</label>
-      <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingredientes" value="{$plato[0]['descripcion']}">
-      <label for="exampleInputName2" class="col-sm-2 control-label">Precio</label>
-      <input type="text" class="form-control" id="valor" name="valor" placeholder="precio" value="{$plato[0]['valor']}">
-      <button type="submit" class="btn btn-default" >Modificar</button>
-    </form>
+  {if empty($menu) }
+        {include file="formAgregarMenu.tpl"}
+  {else}
+        {include file="formModificarMenu.tpl"}
     {/if}
 </div>
 
+
+<div class="formulario_rest">
+  {if empty($plato) }
+      {include file="formAgregarPlato.tpl"}
+    {else}
+      {include file="formModificarPlato.tpl"}
+    {/if}
+</div>
 
 <div class="menu col-lg-12 col-md-12 col-sm-12 col-xs-12">
     {if !empty($error) }
     <div class="alert alert-danger" role="alert">{$error}</div>
     {/if}
-    {foreach from=$tipo item=nombre_menu}
-      <h3>{$nombre_menu['nombre']}
-       <button  class="eliminarMenu btn btn-warning btn-xs " name="{$nombre_menu['id_menu']}" ><span class="glyphicon glyphicon-trash"></span></button>
-       <button  class="modificarMenu btn btn-warning btn-xs" name="{$nombre_menu['id_menu']}"><span class="glyphicon glyphicon-pencil"></span></button>
+    {foreach from=$tipos item=tipo}
+      <h3>{$tipo['nombre']}
+       <button  class="eliminarMenu btn btn-warning btn-xs " name="{$tipo['id_menu']}" ><span class="glyphicon glyphicon-trash"></span></button>
+       <button  class="cargarMenu btn btn-warning btn-xs" name="{$tipo['id_menu']}"><span class="glyphicon glyphicon-pencil"></span></button>
       </h3>
-      <table class="menu" id = "{$nombre_menu['tipo_nombre']}" >
-        {foreach from=$menu item=platom}
-          {if ($platom['id_menu']==$nombre_menu['id_menu'])}
+
+      <table class="menu"  >
+        {foreach from=$platos item=plato}
+          {if ($plato['id_menu']==$tipo['id_menu'])}
             <tr>
             <td id="plato" class = "celda_plato" >
-                <h4>{$platom['nombre']}</h4>
+                <h4>{$plato['nombre']}</h4>
               <br>
-                  {$platom['descripcion']}
+                  {$plato['descripcion']}
             </td>
-            <td id="precio" class = "celda_precio" >{$platom['valor']}</td>
+            <td id="precio" class = "celda_precio" >{$plato['valor']}</td>
             <td class = "celda_boton" >
-               <button  class="eliminarPlato btn btn-warning btn-lg" name="{$platom['id_plato']}" ><span class="glyphicon glyphicon-trash"></span></button>
+               <button  class="eliminarPlato btn btn-warning btn-lg" name="{$plato['id_plato']}" ><span class="glyphicon glyphicon-trash"></span></button>
             </td>
             <td>
-              <button  class="modificarPlato btn btn-warning btn-lg" name="{$platom['id_plato']}" ><span class="glyphicon glyphicon-pencil"></span></button>
+              <button  class="cargarPlato btn btn-warning btn-lg" name="{$plato['id_plato']}" ><span class="glyphicon glyphicon-pencil"></span></button>
             </td>
-            </tr>
-            {/if}
-          {/foreach}
+           </tr>
+          {/if}
+      {/foreach}
         </table>
-        {/foreach}
+  {/foreach}
   </div>
 
-</div>
+
+  </div>
