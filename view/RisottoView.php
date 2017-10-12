@@ -1,32 +1,34 @@
+
 <?php
-
-
 class RisottoView extends View
-{
-  function mostrarIndex (){
-    return  $this->smarty->display('templates/index.tpl');
-  }
 
-  function mostrarHome (){
-    return  $this->smarty->display('templates/home.tpl');
-  }
+	{
+	function mostrarIndex()
+		{
+		return $this->smarty->display('templates/index.tpl');
+		}
 
-  function mostrarContacto (){
-    return  $this->smarty->display('templates/contacto.tpl');
-  }
+	function mostrarHome()
+		{
+		return $this->smarty->display('templates/home.tpl');
+		}
 
-  function mostrarNosotros (){
-    return  $this->smarty->display('templates/nosotros.tpl');
-  }
+	function mostrarContacto()
+		{
+		return $this->smarty->display('templates/contacto.tpl');
+		}
 
-  function mostrarMenu ($tipos,$platos){
-    $this->smarty->assign('tipos', $tipos);
-    $this->smarty->assign('platos', $platos);
+	function mostrarNosotros()
+		{
+		return $this->smarty->display('templates/nosotros.tpl');
+		}
 
-    // $this->smarty->assign('plato', $plato);
-    $this->smarty->display('templates/menuUsuario.tpl');
-  }
+	function mostrarMenu($tipos, $platos)
+		{
+		$this->smarty->assign('tipos', $tipos);
+		$this->smarty->assign('platos', $platos);
+		$this->smarty->display('templates/menuUsuario.tpl');
+		}
+	}
 
-}
-
- ?>
+?>
